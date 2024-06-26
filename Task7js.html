@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Task7</title>
+  <style>
+    h1
+    {
+      color: brown;
+    }
+    #car {
+      position: relative;
+      width: 300px;
+      height: 100px;
+      background-image: url('./task7jsimg.png'); 
+      background-size: cover;
+    }
+    #buttons {
+      margin-left:100px ;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="car"></div>
+  <div>
+    <h1 >Click The following button for the handling the animation</h1>
+  </div>
+  <div id="buttons" >
+    <button onclick="startAnimation()" style="margin:0px 10px 0px 10px;" >Start</button>
+    <button onclick="stopAnimation()" style="margin:0px 10px 0px 10px;"  >Stop</button>
+  </div>
+
+  <script >
+    let train = document.getElementById('car');
+    let animation;
+    
+    function startAnimation() {
+      let position = 0;
+      clearInterval(animation);
+      animation = setInterval(frame, 10);
+      function frame() {
+        if (position === window.innerWidth) {
+          position = -car.offsetWidth; 
+        } else {
+          position++;
+          car.style.left = position + 'px';
+        }
+      }
+    }
+    
+    function stopAnimation() {
+      clearInterval(animation);
+    }
+    
+    
+  </script>
+</body>
+</html>
